@@ -3,21 +3,25 @@
   <div class="repos-container">
       <div class="loading-spinner" v-if="loading"><span class="loader" ></span></div>
     <div class="mt-[6rem]" v-else>
-      <SmallText text="Selected Works" className="font-regular border-b-2 border-slate-300 pb-[.7rem]" />
+      <div class="flex border-b-2 border-slate-300 gap-2">
+        <SmallText text="Selected Works" className="font-regular pb-[.7rem]" />
+        <Paragraph text="[5]" />
+      </div>
+      
       <ul>
         <li class=" border-b-2 border-slate-300 py-[1.8rem]"
           v-for="repo in paginatedRepos"
           :key="repo.id"
         >
           <router-link
-          class="capitalize text-[4.2rem] font-medium"
+          class="capitalize text-[2.7rem] font-medium"
             :to="{ name: 'single-repo', params: { id: repo.id } }"
             >{{ repo.name }}</router-link
           >
           <Paragraph className="uppercase" :text= 'repo.language' />
         </li>
       </ul>
-      <div class="btn-container">
+      <div class="flex gap-8 mt-[3rem]">
         <button
           @click="currentPage--"
           :disabled="currentPage === 1"

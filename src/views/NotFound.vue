@@ -1,14 +1,14 @@
 <template>
   <Layout />
-  <div class="error-page">
+  <div class="grid grid-cols-[1fr,1fr] max-md:block error-page">
     <div class="img-container">
-      <img src="../assets/404.svg" alt="404" class="img-404" />
+      <img src="../assets/404.svg" alt="404" class="img-404 " />
     </div>
     <div class="link-container">
-      <Btn className="bg-slate-500" text="Page not found" />
-      <Heading className="text-[3.6rem] py-[2rem]" title="Oh no! Error 404" />
-      <Paragraph className="w-[80%] text-[1.4rem]" text="Something happened along your way here. Maybe try another time" />
-      <RouterLink to="/" ><Btn className="bg-black  mt-[.9rem]" text="Go Home" /></RouterLink>
+      <Btn className="bg-slate-300 text-slate-500" text="Page not found" />
+      <Heading className="text-[3.6rem] max-md:text-[8vw] py-[2rem]" title="Oh no! Error 404" />
+      <Paragraph className="w-[80%] max-md:w-full text-[1.4rem]" text="Something happened along your way here. Maybe try another time" />
+      <RouterLink to="/" ><Btn className="bg-black max-md:mt-[2.1rem]  mt-[.9rem]" text="Go Home" /></RouterLink>
     </div>
   </div>
 </template>
@@ -29,8 +29,8 @@ export default {
 </script>
 <style>
 .error-page {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
   gap: 3rem;
   align-items: center;
 }

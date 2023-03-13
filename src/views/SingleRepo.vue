@@ -44,9 +44,6 @@ export default {
       this.$router.push("/");
     },
   },
-  mounted() {
-    document.body.style.backgroundColor = "lightblue";
-  },
 };
 </script>
 
