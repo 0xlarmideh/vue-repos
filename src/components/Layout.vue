@@ -1,7 +1,7 @@
 <template>
   <nav class="layout-navs py-[1.7rem] max-md:py-[.4rem] max-md:text-[16px] text-black">
     <p class="layout-link name">Abdulhameed</p>
-    <div>
+    <div class="flex gap-[1.8rem] max-md:gap-[.8rem]">
       <router-link class="layout-link  " to="/">Home</router-link>
     <router-link class="layout-link" to="/repositories">Repos</router-link>
     <router-link class="layout-link" to="/404">404</router-link>
@@ -23,7 +23,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  /* gap: 1rem; */
   color: black;
   margin: .3rem 0;
 }
@@ -35,7 +35,7 @@ nav {
 .layout-link {
   position: relative;
   list-style: none;
-  margin: 0 .4rem;
+  /* margin: 0 .4rem; */
   padding: 0 ;
   cursor: pointer;
   text-decoration: none;
