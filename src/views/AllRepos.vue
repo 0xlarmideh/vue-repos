@@ -20,7 +20,7 @@
           data-aos-duration="1500"
         >
           <router-link
-            class="capitalize text-[2.7rem] font-medium"
+            class="capitalize text-[2.7rem] max-md:text-[2rem] max-md:leading-[2rem] font-medium"
             :to="{ name: 'single-repo', params: { id: repo.id } }"
             >{{ repo.name }}</router-link
           >

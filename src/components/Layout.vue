@@ -1,6 +1,6 @@
 <template>
   <nav class="layout-navs py-[1.7rem] max-md:py-[.4rem] max-md:text-[16px] text-black">
-    <p class="layout-link name">Abdulhameed Busari</p>
+    <p class="layout-link name">Abdulhameed</p>
     <div>
       <router-link class="layout-link  " to="/">Home</router-link>
     <router-link class="layout-link" to="/repositories">Repos</router-link>
@@ -35,7 +35,7 @@ nav {
 .layout-link {
   position: relative;
   list-style: none;
-  margin: 0 1.2rem;
+  margin: 0 .4rem;
   padding: 0 ;
   cursor: pointer;
   text-decoration: none;
@@ -69,8 +69,6 @@ nav {
   .layout-link {
     padding: 0 .6rem
   }
-  .name {
-    display: none;
-  }
+
  }
 </style>

@@ -4,8 +4,8 @@
   <div v-else data-aos="fade-in">
     <div class="mt-[10rem]">
       <Paragraph :text="repository.language" className="uppercase" />
-      <SmallText className="text-[4.4rem] pt-[2.7rem] pb-[3.3rem] leading-[3.5rem] font-medium" :text='repository.name'/>
-      <Paragraph :text="repository.description" className="text-[2.4rem] leading-[2.8rem] w-[65%] mt-[2.7rem]" />
+      <SmallText className="text-[4.4rem] pt-[2.7rem] pb-[3.3rem] leading-[3.5rem] max-md:text-[3.3rem] max-md:leading-[2.7rem] font-medium" :text='repository.name'/>
+      <Paragraph :text="repository.description" className="text-[2.4rem] leading-[2.8rem] w-[65%] max-md:w-full max-md:text-[1.8rem] max-md:leading-[2.1rem] mt-[2.7rem]" />
 
 
 
