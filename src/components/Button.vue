@@ -1,5 +1,5 @@
 <template>
-  <button  :href="[link]" :class="['py-[.8rem]', 'px-[2.1rem]', 'rounded-full', 'text-white', className ]">{{ text }}</button>
+  <button  :href="[link]" :class="['py-[.8rem]', 'px-[2.1rem]', 'rounded-full', 'text-white',  className ]">{{ text }}</button>
 </template>
 
 <script>

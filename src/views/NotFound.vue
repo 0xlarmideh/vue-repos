@@ -1,6 +1,9 @@
 <template>
   <Layout />
-  <div class="grid grid-cols-[1fr,1fr] max-md:block error-page">
+  <div class="grid grid-cols-[1fr,1fr] max-md:block error-page"
+  data-aos="zoom-in"
+  data-aos-delay="550"
+  data-aos-duration="1000">
     <div class="img-container">
       <img src="../assets/404.svg" alt="404" class="img-404 " />
     </div>

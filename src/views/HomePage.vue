@@ -1,35 +1,38 @@
 <template>
   <div>
     <Layout />
-    <div class="mt-[3rem] max-md:mt-[10rem]">
-      <div>
-        <h1 class="front-page-heading tracking-tighter">Frontend</h1>
-        <h1 class="front-page-heading tracking-tighter">Developer</h1>
-      </div>
+    <div class="mt-[3rem] max-md:mt-[10rem]" data-aos="fade-in">
+      <h1 class="front-page-heading tracking-tighter">Frontend</h1>
+      <h1 class="front-page-heading tracking-tighter">Developer</h1>
     </div>
-    <div class="grid grid-cols-[1fr,0.3fr] mt-[4rem] max-md:block">
-      <SmallText
+    <div class="grid grid-cols-[1fr,0.3fr] mt-[4rem] max-md:block"
+    >
+      <div data-aos="zoom-in-left" data-aos-delay="350"
+    data-aos-duration="1000"><SmallText
         className="w-[70%] max-md:w-full max-md:text-[1.4rem] mb-[2rem] leading-[2.4rem]"
         text="Excited to continue pushing boundaries of what is possible and creating visually stunning and functional designs."
-      />
-      <div class="socials">
+      /></div>
+      <div class="socials"
+      data-aos="zoom-in-right" data-aos-delay="350"
+    data-aos-duration="1000">
         <SmallText
           text="Let's get connected"
           className="border-slate-400 text-[1.4rem] border-b-[1px] py-[.4rem] my-[.6rem] text-slate-400"
         />
-        <Link className="" title="Resume" link="" /><br>
-        <Link title="Portfolio" link="www.larmideh.me" /><br>
-        <Link title="LinkedIn" link="www.linkedin.com/in/larmideh" /><br>
-        <Link title="Github" link="github.com/0xlarmideh" /><br>
+        <Link className="" title="Resume" link="" /><br />
+        <Link title="Portfolio" link="www.larmideh.me" /><br />
+        <Link title="LinkedIn" link="www.linkedin.com/in/larmideh" /><br />
+        <Link title="Github" link="github.com/0xlarmideh" /><br />
       </div>
     </div>
-    <div class="max:md-block">
-      <Btn className="bg-black mr-[.6rem]" text="Hit me up" />
+    <div class="max:md-block mb-[3.6rem]" data-aos="fade-in" data-aos-delay="350"
+    data-aos-duration="1500">
+      <Btn
+        className="bg-black mr-[.6rem]"
+        text="Hit me up"
+      />
       <router-link to="/repositories"
-        ><Btn
-          className="bg-slate-700"
-          link="/repositories"
-          text="Repositories"
+        ><Btn className="bg-slate-700" link="/repositories" text="Repositories"
       /></router-link>
     </div>
   </div>
@@ -58,13 +61,13 @@ export default {
 <style>
 .front-page-heading {
   /* font-size: 200px; */
-  font-size: 15vw;
+  font-size: 13vw;
   /* font-size: 15em; */
   font-weight: 500;
-  line-height: 170px;
+  line-height: 9vw;
 }
 
-@media (max-width: 801px) {
+@media (max-width: 987px) {
   .front-page-heading {
     font-size: 16vw;
     line-height: 13vw;

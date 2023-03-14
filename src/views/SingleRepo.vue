@@ -1,12 +1,15 @@
 <template>
   <Layout />
   <div class="loading-spinner" v-if="loading"><span class="loader"></span></div>
-  <div v-else>
-    <div>
-      <p class="desc">{{ repository.description }}</p>
-      <p class="rep"><strong>Language:</strong> {{ repository.language }}</p>
+  <div v-else data-aos="fade-in">
+    <div class="mt-[10rem]">
+      <Paragraph :text="repository.language" className="uppercase" />
+      <SmallText className="text-[4.4rem] pt-[2.7rem] pb-[3.3rem] leading-[3.5rem] font-medium" :text='repository.name'/>
+      <Paragraph :text="repository.description" className="text-[2.4rem] leading-[2.8rem] w-[65%] mt-[2.7rem]" />
 
-      <button @click="redirectToHome"><Btn  className="bg-black" text="Back Home" /></button>
+
+
+      <button class="my-[3rem]" @click="redirectToRepos"><Btn  className="bg-black" text="Back to Repos" /></button>
     </div>
   </div>
 </template>
@@ -15,6 +18,7 @@ import Layout from "../components/Layout.vue";
 import Paragraph from "@/components/typography/Paragraph.vue";
 import SmallText from "@/components/typography/SmallText.vue";
 import Btn from "@/components/Button.vue";
+
 
 export default {
   name: "SingleRepo",
@@ -31,7 +35,7 @@ export default {
     Btn,
   },
   async created() {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 1700));
     const response = await fetch(
       `https://api.github.com/repositories/${this.$route.params.id}`
     );
@@ -40,8 +44,8 @@ export default {
     this.loading = false;
   },
   methods: {
-    redirectToHome() {
-      this.$router.push("/");
+    redirectToRepos() {
+      this.$router.push("/repositories");
     },
   },
 };
@@ -64,7 +68,8 @@ export default {
   content: "";
   display: block;
   border: 24px solid transparent;
-  border-color: transparent transparent #fff #fff;
+  border-color: transparent transparent black black;
+  /* border-color: transparent transparent #fff #fff; */
   position: absolute;
   left: 0;
   top: 0;
@@ -73,7 +78,8 @@ export default {
 .loader:before {
   left: -1px;
   top: 1px;
-  border-color: #fff #fff transparent transparent;
+  /* border-color: #fff #fff transparent transparent; */
+  border-color: black black transparent transparent;
   animation-name: mvrx;
 }
 @keyframes mvx {

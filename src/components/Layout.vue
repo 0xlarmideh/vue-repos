@@ -1,29 +1,31 @@
 <template>
-  <nav class="layout-navs py-[1.7rem] max-md:py-[.4rem] max-md:text-[16px]">
+  <nav class="layout-navs py-[1.7rem] max-md:py-[.4rem] max-md:text-[16px] text-black">
     <p class="layout-link name">Abdulhameed Busari</p>
     <div>
-      <router-link class="layout-link " to="/">Home</router-link>
+      <router-link class="layout-link  " to="/">Home</router-link>
     <router-link class="layout-link" to="/repositories">Repos</router-link>
     <router-link class="layout-link" to="/404">404</router-link>
   </div>
-    
-    <div class="color-mode">
-    <p class="layout-link">Light</p>
-    </div>
+
   </nav>
 </template>
 
-<style>
+<script>
+
+
+export default {
+
+}
+</script>
+
+<style type="text/tailwindcss">
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
   color: black;
-  /* padding: 0 1.4rem; */
-
-  /* padding: .8rem 0; */
-  margin: .9rem 0;
+  margin: .3rem 0;
 }
 
 .layout-navs {
@@ -31,25 +33,39 @@ nav {
 
 }
 .layout-link {
+  position: relative;
   list-style: none;
-  padding: 0 1.7rem;
+  margin: 0 1.2rem;
+  padding: 0 ;
   cursor: pointer;
   text-decoration: none;
-  color: black;
-  border-radius: 10px;
-  transition: border-color 0.2s ease-in-out;
-  /* margin: 1rem 0; */
 }
+
+  .layout-link::after {
+    content: "";
+    background: white;
+    height: 1.5px;
+    width: 0%;
+    left: 0;
+    bottom: -5px;
+    position:absolute;
+    transition-duration: .5s;
+  }
+  
+  .layout-link:hover::after {
+    width: 100%;
+  }
+
 
 .name {
   padding-left: 0;
 }
 
-.layout-link:hover {
+/* .layout-link:hover {
   border-color: #ccc;
-}
+} */
 
-@media (max-width:801px)  { 
+@media (max-width:987px)  { 
   .layout-link {
     padding: 0 .6rem
   }

@@ -19,9 +19,5 @@ export default {
   padding: 0 1.4rem;
 }
 
-body {
-  color: #111414;
-  background-color: #efefef;
 
-}
 </style>

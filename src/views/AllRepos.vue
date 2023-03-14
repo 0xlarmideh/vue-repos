@@ -1,27 +1,33 @@
 <template>
   <Layout />
   <div class="repos-container">
-      <div class="loading-spinner" v-if="loading"><span class="loader" ></span></div>
-    <div class="mt-[6rem]" v-else>
+    <div class="loading-spinner" v-if="loading">
+      <span class="loader"></span>
+    </div>
+    <div class="mt-[10rem]" v-else>
       <div class="flex border-b-2 border-slate-300 gap-2">
         <SmallText text="Selected Works" className="font-regular pb-[.7rem]" />
         <Paragraph text="[5]" />
       </div>
-      
+
       <ul>
-        <li class=" border-b-2 border-slate-300 py-[1.8rem]"
+        <li
+          class="border-b-2 border-slate-300 py-[1.8rem]"
           v-for="repo in paginatedRepos"
           :key="repo.id"
+          data-aos="fade-in"
+          data-aos-delay="550"
+          data-aos-duration="1500"
         >
           <router-link
-          class="capitalize text-[2.7rem] font-medium"
+            class="capitalize text-[2.7rem] font-medium"
             :to="{ name: 'single-repo', params: { id: repo.id } }"
             >{{ repo.name }}</router-link
           >
-          <Paragraph className="uppercase" :text= 'repo.language' />
+          <Paragraph className="uppercase" :text="repo.language" />
         </li>
       </ul>
-      <div class="flex gap-8 mt-[3rem]">
+      <div class="flex gap-8 mt-[3rem] mb-[8rem]">
         <button
           @click="currentPage--"
           :disabled="currentPage === 1"
@@ -52,7 +58,10 @@ import SmallText from "@/components/typography/SmallText.vue";
 export default {
   name: "AllRepos",
   components: {
-    Layout, SmallText, Paragraph, Heading
+    Layout,
+    SmallText,
+    Paragraph,
+    Heading,
   },
   data() {
     return {
@@ -65,7 +74,7 @@ export default {
   },
   methods: {
     async fetchRepositories() {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 1700));
       this.loading = true;
       try {
         const response = await axios.get(
@@ -94,6 +103,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
