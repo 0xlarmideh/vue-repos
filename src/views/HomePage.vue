@@ -5,14 +5,14 @@
       <h1 class="front-page-heading tracking-tighter">Frontend</h1>
       <h1 class="front-page-heading tracking-tighter">Developer</h1>
     </div>
-    <div class="grid grid-cols-[1fr,0.3fr] mt-[4rem] max-md:block">
+    <div class="grid grid-cols-[1fr,0.3fr] mt-[4rem] max-md:grid-cols-[1fr]">
       <div
         data-aos="zoom-in-left"
         data-aos-delay="350"
         data-aos-duration="1000"
       >
         <SmallText
-          className="w-[70%] max-md:w-full max-md:text-[1.4rem] mb-[2rem] leading-[2.4rem]"
+          className="w-[85%]  max-md:text-[1.4rem] mb-[2rem] leading-[2.4rem]"
           text="Excited to continue pushing boundaries of what is possible and creating visually stunning and functional designs."
         />
       </div>
@@ -33,7 +33,7 @@
       </div>
     </div>
     <div
-      class="max:md-block mb-[3.6rem]"
+      class="max:md-block mb-[3.6rem] flex gap-[.27rem]"
       data-aos="fade-in"
       data-aos-delay="350"
       data-aos-duration="1500"
@@ -44,6 +44,7 @@
       /></router-link>
     </div>
   </div>
+  <Footer />
 </template>
 
 <script>
@@ -51,6 +52,7 @@ import NavLayout from "../components/NavLayout.vue";
 import Paragraph from "@/components/typography/Paragraph.vue";
 import SmallText from "@/components/typography/SmallText.vue";
 import Btn from "@/components/Button.vue";
+import Footer from "@/components/Footer.vue";
 // import SmallTextVue
 import Link from "../components/Links.vue";
 
@@ -62,6 +64,7 @@ export default {
     Link,
     SmallText,
     Btn,
+    Footer
   },
 };
 </script>

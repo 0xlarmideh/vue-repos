@@ -14,11 +14,13 @@
       <RouterLink to="/" ><Btn className="bg-black max-md:mt-[2.1rem]  mt-[.9rem]" text="Go Home" /></RouterLink>
     </div>
   </div>
+  <Footer />
 </template>
 <script>
 import NavLayout from "../components/NavLayout.vue";
 import Heading from "@/components/typography/Heading.vue";
 import Btn from "@/components/Button.vue";
+import Footer from "@/components/Footer.vue";
 import Paragraph from "@/components/typography/Paragraph.vue";
 
 
@@ -26,7 +28,7 @@ export default {
   name: "NotFound",
 
   components: {
-    NavLayout, Heading, Paragraph, Btn
+    NavLayout, Heading, Paragraph, Btn, Footer
   },
 };
 </script>

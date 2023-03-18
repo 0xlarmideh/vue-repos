@@ -24,28 +24,29 @@
             :to="{ name: 'single-repo', params: { id: repo.id } }"
             >{{ repo.name }}</router-link
           >
-          <Paragraph className="uppercase" :text="repo.language" />
+          <div v-if="repo.language"><Paragraph className="uppercase" :text="repo.language" /></div>
         </li>
       </ul>
-      <div class="flex gap-8 mt-[3rem] mb-[8rem]">
+      <div class="flex gap-8 mt-[3rem] mb-[8rem] items-center">
         <button
           @click="currentPage--"
           :disabled="currentPage === 1"
           :class="{ disabled: currentPage === 1 }"
         >
-          Prev
+          <Icon icon="carbon:previous-filled"  width="45" height="45" />
         </button>
-        <span>Page {{ currentPage }} of {{ totalPages }}</span>
+        <span class="font-regular text-[1.2rem]">Page {{ currentPage }} of {{ totalPages }}</span>
         <button
           @click="currentPage++"
           :disabled="currentPage === totalPages"
           :class="{ disabled: currentPage === totalPages }"
         >
-          Next
+          <Icon icon="carbon:previous-filled" width="45" height="45" :horizontalFlip="true" />
         </button>
       </div>
     </div>
   </div>
+  <Footer />
 </template>
 
 <script>
@@ -54,6 +55,8 @@ import NavLayout from "../components/NavLayout.vue";
 import Paragraph from "@/components/typography/Paragraph.vue";
 import Heading from "@/components/typography/Heading.vue";
 import SmallText from "@/components/typography/SmallText.vue";
+import Footer from "@/components/Footer.vue";
+import { Icon } from '@iconify/vue';
 
 export default {
   name: "AllRepos",
@@ -62,6 +65,8 @@ export default {
     SmallText,
     Paragraph,
     Heading,
+    Footer,
+    Icon
   },
   data() {
     return {
@@ -80,11 +85,9 @@ export default {
         const response = await axios.get(
           "https://api.github.com/users/0xlarmideh/repos"
         );
-        console.log(response);
         this.repositories = response.data;
         this.totalPages = Math.ceil(this.repositories.length / this.perPage);
       } catch (error) {
-        console.error(error);
       } finally {
         this.loading = false;
       }
@@ -103,4 +106,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+  .disabled {
+    color: #C0C2C9;
+  }
+</style>

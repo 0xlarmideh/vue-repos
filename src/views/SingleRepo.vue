@@ -1,48 +1,66 @@
 <template>
+  <NavLayout />
   <div class="loading-spinner" v-if="loading"><span class="loader"></span></div>
   <div v-else data-aos="fade-in">
     <div class="mt-[10rem]">
-      <div v-if="repository.language"><Paragraph :text="repository.language" className="uppercase" /></div>
-      
+      <div v-if="repository.language">
+        <Paragraph :text="repository.language" className="uppercase" />
+      </div>
+
       <SmallText
-        className="text-[4rem] pt-[2.7rem] pb-[3.3rem] leading-[3rem] max-md:text-[3rem] max-md:leading-[2rem] font-regular"
+        className="text-[4rem] pt-[2.7rem] pb-[3.3rem] leading-[3.4rem] max-md:text-[3rem] max-md:leading-[2.4rem] font-regular"
         :text="repository.name"
       />
-      <div v-if="repository.description" class=" w-[75%] max-md:w-full mt-[2.7rem]">
+      <div
+        v-if="repository.description"
+        class="w-[80%] max-md:w-full mt-[2.7rem]"
+      >
         <Paragraph
           :text="repository.description"
-          className="text-[1.2rem] leading-[2.8rem] max-md:text-[1.8rem] max-md:leading-[2.1rem]"
+          className="text-[2.1rem] leading-[2.8rem] max-md:text-[1.5rem] max-md:leading-[2.1rem]"
         />
       </div>
-      <div v-else class="text-[1.8rem] max-md:text-[1.2rem] w-[75%] max-md:w-full mt-[2.7rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius suscipit dolorem quibusdam labore, sapiente recusandae laudantium hic optio sint aperiam! Quia, veniam! Nisi beatae amet qui porro veniam esse at.</div>
-      
+      <div
+        v-else
+        class="text-[2.1rem] max-md:text-[1.5rem] w-[75%] max-md:w-full mt-[2.7rem]"
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius suscipit
+        dolorem quibusdam labore, sapiente recusandae laudantium hic optio sint
+        aperiam! Quia, veniam! Nisi beatae amet qui porro veniam esse at.
+      </div>
+
       <div class="details w-[50%] max-md:w-full">
-        <div class="detail-item grid grid-cols-[30%_70%] max-sm:grid-cols-[45%_55%]">
+        <div
+          class="detail-item grid grid-cols-[30%_70%] max-sm:grid-cols-[45%_55%]"
+        >
           <Paragraph text="Creator" />
           <Paragraph :text="repository.owner.login" />
         </div>
-        <div class="detail-item grid grid-cols-[30%_70%] max-sm:grid-cols-[45%_55%] ">
+        <div
+          class="detail-item grid grid-cols-[30%_70%] max-sm:grid-cols-[45%_55%]"
+        >
           <Paragraph text="Date Created" />
           <Paragraph :text="myDate" />
         </div>
       </div>
-      <div class="my-[3rem] flex gap-[1rem]" >
+      <div class="mt-[3rem] mb-[9rem] flex gap-[1rem]">
         <button @click="redirectToRepos">
-        <Btn className="bg-black" text="Back to Repos" />
-      </button>
-      <GithubBtn text="Github" :link="repository.html_url" />
+          <Btn className="bg-black" text="Back to Repos" />
+        </button>
+        <GithubBtn text="Github" :link="repository.html_url" />
       </div>
-      
     </div>
   </div>
+  <Footer />
 </template>
 <script>
 import NavLayout from "../components/NavLayout.vue";
 import Paragraph from "@/components/typography/Paragraph.vue";
 import SmallText from "@/components/typography/SmallText.vue";
 import Btn from "@/components/Button.vue";
-import SRepoNav from "@/components/SRepoNav.vue";
-import GithubBtn from '@/components/GithubBtn.vue';
+import Footer from "@/components/Footer.vue";
+// import SRepoNav from "@/components/SRepoNav.vue";
+import GithubBtn from "@/components/GithubBtn.vue";
 
 export default {
   name: "SingleRepo",
@@ -51,7 +69,7 @@ export default {
       repository: {},
       loading: true,
       dateCreated: "",
-      myDate: ""
+      myDate: "",
     };
   },
   components: {
@@ -59,7 +77,8 @@ export default {
     Paragraph,
     SmallText,
     Btn,
-    SRepoNav,
+    Footer,
+    // SRepoNav,
     GithubBtn,
   },
   async created() {
@@ -69,8 +88,13 @@ export default {
     );
     const data = await response.json();
     this.repository = data;
-    this.dateCreated = new Date(this.repository.created_at)
-  this.myDate = (this.dateCreated.getUTCFullYear()) + "/" + (this.dateCreated.getMonth() + 1) + "/" + (this.dateCreated.getUTCDate());
+    this.dateCreated = new Date(this.repository.created_at);
+    this.myDate =
+      this.dateCreated.getUTCFullYear() +
+      "/" +
+      (this.dateCreated.getMonth() + 1) +
+      "/" +
+      this.dateCreated.getUTCDate();
     this.loading = false;
   },
   methods: {
@@ -78,14 +102,12 @@ export default {
       this.$router.push("/repositories");
     },
   },
-
 };
 </script>
 
 <style>
 .details {
   margin-top: 4rem;
-
 }
 .detail-item {
   padding: 1.3rem 0;

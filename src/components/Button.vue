@@ -1,9 +1,13 @@
 <template>
-  <button  :href="[link]" :class="['py-[.8rem]', 'px-[2.1rem]', 'rounded-full', 'text-white',  className ]">{{ text }}</button>
+  <button  :href="[link]" :class="['py-[.8rem]', 'px-[1.3rem]', 'rounded-full', 'text-white', 'flex', 'gap-[1rem]', 'items-center',  className ]">{{ text }} <Icon icon="carbon:dot-mark" color="white" width="10" height="10" /></button>
 </template>
 
 <script>
+import { Icon } from '@iconify/vue';
 export default {
+  components: {
+		Icon,
+	},
   props: {
     text: {
       type: String,
