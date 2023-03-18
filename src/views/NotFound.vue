@@ -1,5 +1,5 @@
 <template>
-  <Layout />
+  <NavLayout />
   <div class="grid grid-cols-[1fr,1fr] max-md:block error-page"
   data-aos="zoom-in"
   data-aos-delay="550"
@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-import Layout from "../components/Layout.vue";
+import NavLayout from "../components/NavLayout.vue";
 import Heading from "@/components/typography/Heading.vue";
 import Btn from "@/components/Button.vue";
 import Paragraph from "@/components/typography/Paragraph.vue";
@@ -26,7 +26,7 @@ export default {
   name: "NotFound",
 
   components: {
-    Layout, Heading, Paragraph, Btn
+    NavLayout, Heading, Paragraph, Btn
   },
 };
 </script>

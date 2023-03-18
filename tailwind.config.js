@@ -3,6 +3,7 @@
 // tailwind.config.js
 module.exports = {
   screens: {
+    sm: "600px",
     md: "987px",
     // => @media (min-width: 640px) { ... }
 

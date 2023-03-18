@@ -1,5 +1,5 @@
 <template>
-  <Layout />
+  <NavLayout />
   <div class="repos-container">
     <div class="loading-spinner" v-if="loading">
       <span class="loader"></span>
@@ -50,7 +50,7 @@
 
 <script>
 import axios from "axios";
-import Layout from "../components/Layout.vue";
+import NavLayout from "../components/NavLayout.vue";
 import Paragraph from "@/components/typography/Paragraph.vue";
 import Heading from "@/components/typography/Heading.vue";
 import SmallText from "@/components/typography/SmallText.vue";
@@ -58,7 +58,7 @@ import SmallText from "@/components/typography/SmallText.vue";
 export default {
   name: "AllRepos",
   components: {
-    Layout,
+    NavLayout,
     SmallText,
     Paragraph,
     Heading,
