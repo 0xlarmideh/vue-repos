@@ -4,10 +4,10 @@ A project that utilizes Vue, Axios and Fetch API to create a website that shows 
 
 ## Stack
 ```
-VueJs, TailWind CSS, VueUse Animation, {TypeScript}?
+VueJs, TailWind CSS, AOS Animation, Iconify {TypeScript}?
 ```
 
 ## Hosted Link
 
-vue-repos.vercel.app
+https://vue-repos.vercel.app
 
