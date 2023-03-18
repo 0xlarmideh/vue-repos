@@ -38,7 +38,8 @@
       data-aos-delay="350"
       data-aos-duration="1500"
     >
-      <Btn className="bg-black mr-[.6rem]" text="Hit me up" />
+    <a href="mailto:busarioyewole@email.com"><Btn className="bg-black mr-[.6rem]" text="Hit me up" /></a>  
+    
       <router-link to="/repositories"
         ><Btn className="bg-slate-700" link="/repositories" text="Repositories"
       /></router-link>
