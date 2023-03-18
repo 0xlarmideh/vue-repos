@@ -6,3 +6,8 @@ A project that utilizes Vue, Axios and Fetch API to create a website that shows 
 ```
 VueJs, TailWind CSS, VueUse Animation, {TypeScript}?
 ```
+
+## Hosted Link
+```
+vue-repos.vercel.app
+```
